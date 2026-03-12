@@ -10,3 +10,5 @@ export const SPECS = [
   { id: "ai", name: "AI / ML", Icon: Cpu },
   { id: "fullstack", name: "Full Stack", Icon: Code2 },
 ];
+
+export default SPECS;
