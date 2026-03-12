@@ -1,6 +1,13 @@
-import { Shield, X, Loader2 } from 'lucide-react';
+import { Shield, X, Loader2 } from "lucide-react";
 
-export default function BankModal({ isOpen, bankForm, isProcessing, onChange, onSubmit, onClose }) {
+export default function BankModal({
+  isOpen,
+  bankForm,
+  isProcessing,
+  onChange,
+  onSubmit,
+  onClose,
+}) {
   if (!isOpen) return null;
 
   return (
@@ -34,14 +41,18 @@ export default function BankModal({ isOpen, bankForm, isProcessing, onChange, on
               className="w-full border-2 border-neutral-100 p-4 font-['DM_Sans'] font-bold uppercase focus:border-[#1A1A1A] outline-none transition-all"
               placeholder="ACCOUNT HOLDER"
               value={bankForm.holderName}
-              onChange={e => onChange({ ...bankForm, holderName: e.target.value })}
+              onChange={(e) =>
+                onChange({ ...bankForm, holderName: e.target.value })
+              }
             />
             <input
               required
               className="w-full border-2 border-neutral-100 p-4 font-['DM_Sans'] font-bold uppercase focus:border-[#1A1A1A] outline-none transition-all"
               placeholder="BANK NAME"
               value={bankForm.bankName}
-              onChange={e => onChange({ ...bankForm, bankName: e.target.value })}
+              onChange={(e) =>
+                onChange({ ...bankForm, bankName: e.target.value })
+              }
             />
             <div className="grid grid-cols-2 gap-4 sm:gap-6">
               <input
@@ -50,14 +61,18 @@ export default function BankModal({ isOpen, bankForm, isProcessing, onChange, on
                 className="w-full border-2 border-neutral-100 p-4 font-['DM_Sans'] font-bold focus:border-[#1A1A1A] outline-none transition-all"
                 placeholder="ACC NUMBER"
                 value={bankForm.accountNumber}
-                onChange={e => onChange({ ...bankForm, accountNumber: e.target.value })}
+                onChange={(e) =>
+                  onChange({ ...bankForm, accountNumber: e.target.value })
+                }
               />
               <input
                 required
                 className="w-full border-2 border-neutral-100 p-4 font-['DM_Sans'] font-bold uppercase focus:border-[#1A1A1A] outline-none transition-all"
                 placeholder="SWIFT CODE"
                 value={bankForm.swiftCode}
-                onChange={e => onChange({ ...bankForm, swiftCode: e.target.value })}
+                onChange={(e) =>
+                  onChange({ ...bankForm, swiftCode: e.target.value })
+                }
               />
             </div>
             <button
@@ -65,10 +80,13 @@ export default function BankModal({ isOpen, bankForm, isProcessing, onChange, on
               disabled={isProcessing}
               className="w-full bg-[#1A1A1A] text-white py-5 font-['Unbounded'] text-[11px] font-black uppercase tracking-[0.3em] hover:bg-[#E63946] transition-all flex items-center justify-center gap-4"
             >
-              {isProcessing
-                ? <Loader2 size={18} className="animate-spin" />
-                : <><Shield size={16} /> Link Account</>
-              }
+              {isProcessing ? (
+                <Loader2 size={18} className="animate-spin" />
+              ) : (
+                <>
+                  <Shield size={16} /> Link Account
+                </>
+              )}
             </button>
           </form>
         </div>

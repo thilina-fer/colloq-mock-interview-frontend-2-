@@ -1,4 +1,4 @@
-import { Shield } from 'lucide-react';
+import { Shield } from "lucide-react";
 
 export default function ConfirmedSessions({ sessions }) {
   if (sessions.length === 0) return null;

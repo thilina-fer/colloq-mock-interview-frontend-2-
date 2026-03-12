@@ -64,7 +64,9 @@ const AuthProfileStep = ({ role, form, handleChange, errors }) => (
               className="w-full py-4 px-6 border-2 outline-none transition-all duration-300"
               style={{
                 ...INPUT_STYLE,
-                borderColor: errors.designation ? COLORS.red : COLORS.borderLight,
+                borderColor: errors.designation
+                  ? COLORS.red
+                  : COLORS.borderLight,
               }}
             />
           </div>
@@ -84,7 +86,9 @@ const AuthProfileStep = ({ role, form, handleChange, errors }) => (
               className="w-full py-4 px-6 border-2 outline-none transition-all duration-300"
               style={{
                 ...INPUT_STYLE,
-                borderColor: errors.experience ? COLORS.red : COLORS.borderLight,
+                borderColor: errors.experience
+                  ? COLORS.red
+                  : COLORS.borderLight,
               }}
             />
           </div>

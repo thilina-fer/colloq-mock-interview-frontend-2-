@@ -30,7 +30,9 @@ export default function MyBookingsTable({ bookings, onNavigateToBook }) {
           {bookings.map((pb) => (
             <tr key={pb.id} className="hover:bg-neutral-50 transition-colors">
               <td className="px-6 sm:px-10 py-6 sm:py-8">
-                <div className="font-['Unbounded'] text-xs font-black uppercase italic">{pb.mentorName}</div>
+                <div className="font-['Unbounded'] text-xs font-black uppercase italic">
+                  {pb.mentorName}
+                </div>
               </td>
               <td className="px-6 sm:px-10 py-6 sm:py-8 font-['DM_Mono'] text-[11px] font-bold uppercase text-neutral-400 tracking-tighter">
                 {pb.type}
@@ -38,7 +40,9 @@ export default function MyBookingsTable({ bookings, onNavigateToBook }) {
               <td className="px-6 sm:px-10 py-6 sm:py-8">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                  <span className="font-['DM_Mono'] text-[10px] font-black uppercase">{pb.status}</span>
+                  <span className="font-['DM_Mono'] text-[10px] font-black uppercase">
+                    {pb.status}
+                  </span>
                 </div>
               </td>
               <td className="px-6 sm:px-10 py-6 sm:py-8 text-right font-['Unbounded'] text-sm font-black italic tracking-tighter">

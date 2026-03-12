@@ -1,6 +1,11 @@
-import SidebarNavItem from './SidebarNavItem';
+import SidebarNavItem from "./SidebarNavItem";
 
-export default function SidebarNavSection({ section, currentView, onViewChange, isExpanded }) {
+export default function SidebarNavSection({
+  section,
+  currentView,
+  onViewChange,
+  isExpanded,
+}) {
   return (
     <>
       <div

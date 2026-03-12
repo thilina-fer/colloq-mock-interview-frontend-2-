@@ -1,4 +1,4 @@
-import { Check, Loader2 } from 'lucide-react';
+import { Check, Loader2 } from "lucide-react";
 
 export default function RequestCard({ request, isProcessing, onAccept }) {
   return (
@@ -21,7 +21,11 @@ export default function RequestCard({ request, isProcessing, onAccept }) {
           onClick={() => onAccept(request.id)}
           className="flex-1 bg-[#1A1A1A] text-white py-4 font-['Unbounded'] text-[10px] font-black uppercase hover:bg-[#E63946] transition-all flex items-center justify-center gap-2"
         >
-          {isProcessing ? <Loader2 size={14} className="animate-spin" /> : <Check size={14} />}
+          {isProcessing ? (
+            <Loader2 size={14} className="animate-spin" />
+          ) : (
+            <Check size={14} />
+          )}
           Approve Protocol
         </button>
       </div>

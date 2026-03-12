@@ -1,6 +1,6 @@
-import { Sparkles } from 'lucide-react';
-import Reveal from './Reveal';
-import MyBookingsTable from './MyBookingsTable';
+import { Sparkles } from "lucide-react";
+import Reveal from "./Reveal";
+import MyBookingsTable from "./MyBookingsTable";
 
 export default function MyBookingsView({ personalBookings, onNavigateToBook }) {
   return (
@@ -23,7 +23,10 @@ export default function MyBookingsView({ personalBookings, onNavigateToBook }) {
           </h3>
           <Sparkles size={18} className="text-[#E63946]" />
         </div>
-        <MyBookingsTable bookings={personalBookings} onNavigateToBook={onNavigateToBook} />
+        <MyBookingsTable
+          bookings={personalBookings}
+          onNavigateToBook={onNavigateToBook}
+        />
       </div>
     </div>
   );

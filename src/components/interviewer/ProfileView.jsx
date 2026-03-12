@@ -1,6 +1,6 @@
-import { Edit3, X } from 'lucide-react';
-import ProfileDisplay from './ProfileDisplay';
-import ProfileEditForm from './ProfileEditForm';
+import { Edit3, X } from "lucide-react";
+import ProfileDisplay from "./ProfileDisplay";
+import ProfileEditForm from "./ProfileEditForm";
 
 export default function ProfileView({
   userProfile,
@@ -21,14 +21,19 @@ export default function ProfileView({
           onClick={onToggleEdit}
           className={`px-6 sm:px-8 py-4 font-['Unbounded'] text-[10px] font-black uppercase tracking-widest transition-all flex items-center gap-3 self-start sm:self-auto ${
             isEditing
-              ? 'bg-neutral-100 text-neutral-400 shadow-none'
-              : 'bg-[#1A1A1A] text-white hover:bg-[#E63946] shadow-xl'
+              ? "bg-neutral-100 text-neutral-400 shadow-none"
+              : "bg-[#1A1A1A] text-white hover:bg-[#E63946] shadow-xl"
           }`}
         >
-          {isEditing
-            ? <><X size={14} /> Abandon Changes</>
-            : <><Edit3 size={14} /> Edit Identity</>
-          }
+          {isEditing ? (
+            <>
+              <X size={14} /> Abandon Changes
+            </>
+          ) : (
+            <>
+              <Edit3 size={14} /> Edit Identity
+            </>
+          )}
         </button>
       </div>
 

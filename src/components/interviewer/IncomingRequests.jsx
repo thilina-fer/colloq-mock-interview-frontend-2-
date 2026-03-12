@@ -1,4 +1,4 @@
-import RequestCard from './RequestCard';
+import RequestCard from "./RequestCard";
 
 export default function IncomingRequests({ requests, isProcessing, onAccept }) {
   return (
@@ -18,7 +18,9 @@ export default function IncomingRequests({ requests, isProcessing, onAccept }) {
           ))}
         </div>
       ) : (
-        <p className="font-['DM_Mono'] text-xs italic text-neutral-400">Signal queue is empty.</p>
+        <p className="font-['DM_Mono'] text-xs italic text-neutral-400">
+          Signal queue is empty.
+        </p>
       )}
     </div>
   );

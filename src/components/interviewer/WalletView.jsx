@@ -1,5 +1,5 @@
-import WalletSummaryCard from './WalletSummaryCard';
-import BankStatusCard from './BankStatusCard';
+import WalletSummaryCard from "./WalletSummaryCard";
+import BankStatusCard from "./BankStatusCard";
 
 export default function WalletView({ userProfile, onOpenBankModal }) {
   return (
@@ -10,10 +10,10 @@ export default function WalletView({ userProfile, onOpenBankModal }) {
         </h1>
         <p
           className={`font-['DM_Mono'] text-[12px] font-black uppercase ${
-            userProfile.bankConnected ? 'text-green-600' : 'text-[#E63946]'
+            userProfile.bankConnected ? "text-green-600" : "text-[#E63946]"
           }`}
         >
-          {userProfile.bankConnected ? 'Bank Linked' : 'Awaiting Link'}
+          {userProfile.bankConnected ? "Bank Linked" : "Awaiting Link"}
         </p>
       </div>
 

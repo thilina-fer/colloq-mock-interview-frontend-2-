@@ -1,8 +1,13 @@
-import Reveal from './Reveal';
-import IncomingRequests from './IncomingRequests';
-import ConfirmedSessions from './ConfirmedSessions';
+import Reveal from "./Reveal";
+import IncomingRequests from "./IncomingRequests";
+import ConfirmedSessions from "./ConfirmedSessions";
 
-export default function OverviewView({ pendingRequests, confirmedSessions, isProcessing, onAcceptBooking }) {
+export default function OverviewView({
+  pendingRequests,
+  confirmedSessions,
+  isProcessing,
+  onAcceptBooking,
+}) {
   return (
     <div className="space-y-12 animate-in fade-in">
       <Reveal animation="slide-left">

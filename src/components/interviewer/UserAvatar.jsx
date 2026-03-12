@@ -1,7 +1,7 @@
-import { Shield } from 'lucide-react';
+import { Shield } from "lucide-react";
 
-export default function UserAvatar({ name, size = 'sm' }) {
-  if (size === 'lg') {
+export default function UserAvatar({ name, size = "sm" }) {
+  if (size === "lg") {
     return (
       <div className="w-32 h-32 sm:w-40 sm:h-40 bg-[#1A1A1A] text-white flex items-center justify-center text-4xl sm:text-5xl font-['Unbounded'] font-black border-4 border-[#E63946] shadow-2xl relative shrink-0">
         {name[0]}

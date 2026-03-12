@@ -1,4 +1,4 @@
-import { Download, Wallet } from 'lucide-react';
+import { Download, Wallet } from "lucide-react";
 
 export default function WalletSummaryCard({ balance, bankConnected }) {
   return (
@@ -21,12 +21,12 @@ export default function WalletSummaryCard({ balance, bankConnected }) {
             disabled={!bankConnected}
             className={`flex-1 py-4 sm:py-5 font-['Unbounded'] text-[11px] font-black uppercase tracking-[0.2em] shadow-xl transition-all flex items-center justify-center gap-3 ${
               bankConnected
-                ? 'bg-[#E63946] text-white hover:scale-[1.02]'
-                : 'bg-neutral-800 text-neutral-500 cursor-not-allowed'
+                ? "bg-[#E63946] text-white hover:scale-[1.02]"
+                : "bg-neutral-800 text-neutral-500 cursor-not-allowed"
             }`}
           >
             <Download size={18} />
-            {bankConnected ? 'Withdraw' : 'Connect Bank to Withdraw'}
+            {bankConnected ? "Withdraw" : "Connect Bank to Withdraw"}
           </button>
         </div>
       </div>

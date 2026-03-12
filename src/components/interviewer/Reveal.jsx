@@ -1,6 +1,11 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from "react";
 
-export default function Reveal({ children, animation = 'fade-up', delay = 0, duration = 600 }) {
+export default function Reveal({
+  children,
+  animation = "fade-up",
+  delay = 0,
+  duration = 600,
+}) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
 
@@ -12,7 +17,7 @@ export default function Reveal({ children, animation = 'fade-up', delay = 0, dur
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -20,20 +25,28 @@ export default function Reveal({ children, animation = 'fade-up', delay = 0, dur
 
   const getInitialClass = () => {
     switch (animation) {
-      case 'fade-up': return 'transform translate-y-8 opacity-0 transition-all';
-      case 'fade-in': return 'opacity-0 transition-opacity';
-      case 'slide-left': return 'transform -translate-x-8 opacity-0 transition-all';
-      default: return '';
+      case "fade-up":
+        return "transform translate-y-8 opacity-0 transition-all";
+      case "fade-in":
+        return "opacity-0 transition-opacity";
+      case "slide-left":
+        return "transform -translate-x-8 opacity-0 transition-all";
+      default:
+        return "";
     }
   };
 
   const getVisibleClass = () => {
-    if (!isVisible) return '';
+    if (!isVisible) return "";
     switch (animation) {
-      case 'fade-up': return 'translate-y-0 opacity-100';
-      case 'fade-in': return 'opacity-100';
-      case 'slide-left': return 'translate-x-0 opacity-100';
-      default: return 'opacity-100';
+      case "fade-up":
+        return "translate-y-0 opacity-100";
+      case "fade-in":
+        return "opacity-100";
+      case "slide-left":
+        return "translate-x-0 opacity-100";
+      default:
+        return "opacity-100";
     }
   };
 
@@ -43,7 +56,7 @@ export default function Reveal({ children, animation = 'fade-up', delay = 0, dur
       style={{
         transitionDelay: `${delay}ms`,
         transitionDuration: `${duration}ms`,
-        transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
       }}
       className={`${getInitialClass()} ${getVisibleClass()}`}
     >

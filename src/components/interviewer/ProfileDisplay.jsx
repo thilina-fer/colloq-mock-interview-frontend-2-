@@ -1,5 +1,5 @@
-import { Github, Linkedin } from 'lucide-react';
-import UserAvatar from './UserAvatar';
+import { Github, Linkedin } from "lucide-react";
+import UserAvatar from "./UserAvatar";
 
 export default function ProfileDisplay({ userProfile }) {
   return (
@@ -17,7 +17,7 @@ export default function ProfileDisplay({ userProfile }) {
           "{userProfile.bio}"
         </p>
         <div className="flex flex-wrap gap-2 pt-4">
-          {userProfile.expertise.split(',').map((tag, i) => (
+          {userProfile.expertise.split(",").map((tag, i) => (
             <span
               key={i}
               className="px-4 py-1.5 bg-[#F8F6F1] border-2 border-neutral-100 text-[9px] font-black uppercase tracking-widest text-neutral-400"

@@ -1,25 +1,25 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import GlobalStyles from '../components/interviewer/GlobalStyles';
-import Sidebar from '../components/interviewer/Sidebar';
-import Header from '../components/interviewer/Header';
-import OverviewView from '../components/interviewer/OverviewView';
-import WalletView from '../components/interviewer/WalletView';
-import ProfileView from '../components/interviewer/ProfileView';
-import BookMentorshipView from '../components/interviewer/BookMentorshipView';
-import MyBookingsView from '../components/interviewer/MyBookingsView';
-import BankModal from '../components/interviewer/BankModal';
-import Footer from '../components/interviewer/Footer';
+import GlobalStyles from "../components/interviewer/GlobalStyles";
+import Sidebar from "../components/interviewer/Sidebar";
+import Header from "../components/interviewer/Header";
+import OverviewView from "../components/interviewer/OverviewView";
+import WalletView from "../components/interviewer/WalletView";
+import ProfileView from "../components/interviewer/ProfileView";
+import BookMentorshipView from "../components/interviewer/BookMentorshipView";
+import MyBookingsView from "../components/interviewer/MyBookingsView";
+import BankModal from "../components/interviewer/BankModal";
+import Footer from "../components/interviewer/Footer";
 
-import { INTERVIEWER_PROFILE } from '../constants/interviewerProfile';
-import { PENDING_REQUESTS } from '../constants/pendingRequests';
-import { CONFIRMED_SESSIONS } from '../constants/confirmedSessions';
-import { PERSONAL_BOOKINGS } from '../constants/personalBookings';
-import { BANK_FORM_INITIAL } from '../constants/bankFormInitial';
+import { INTERVIEWER_PROFILE } from "../constants/interviewerProfile";
+import { PENDING_REQUESTS } from "../constants/pendingRequests";
+import { CONFIRMED_SESSIONS } from "../constants/confirmedSessions";
+import { PERSONAL_BOOKINGS } from "../constants/personalBookings";
+import { BANK_FORM_INITIAL } from "../constants/bankFormInitial";
 
 export default function InterviwerDashboard() {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
-  const [currentView, setCurrentView] = useState('overview');
+  const [currentView, setCurrentView] = useState("overview");
   const [userProfile, setUserProfile] = useState(INTERVIEWER_PROFILE);
 
   // Profile edit state
@@ -32,12 +32,13 @@ export default function InterviwerDashboard() {
 
   // Bookings state
   const [pendingRequests, setPendingRequests] = useState(PENDING_REQUESTS);
-  const [confirmedSessions, setConfirmedSessions] = useState(CONFIRMED_SESSIONS);
+  const [confirmedSessions, setConfirmedSessions] =
+    useState(CONFIRMED_SESSIONS);
   const [personalBookings, setPersonalBookings] = useState(PERSONAL_BOOKINGS);
   const [isProcessing, setIsProcessing] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem('colloqInterviewerProfile');
+    const stored = localStorage.getItem("colloqInterviewerProfile");
     if (stored) {
       try {
         const parsed = JSON.parse(stored);
@@ -51,10 +52,10 @@ export default function InterviwerDashboard() {
   }, []);
 
   useEffect(() => {
-    const link = document.createElement('link');
+    const link = document.createElement("link");
     link.href =
-      'https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Unbounded:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap';
-    link.rel = 'stylesheet';
+      "https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Unbounded:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap";
+    link.rel = "stylesheet";
     document.head.appendChild(link);
   }, []);
 
@@ -70,7 +71,10 @@ export default function InterviwerDashboard() {
     setIsProcessing(true);
     setTimeout(() => {
       setPendingRequests((prev) => prev.filter((b) => b.id !== bookingId));
-      setConfirmedSessions((prev) => [...prev, { ...booking, status: 'Paid & Confirmed' }]);
+      setConfirmedSessions((prev) => [
+        ...prev,
+        { ...booking, status: "Paid & Confirmed" },
+      ]);
       setIsProcessing(false);
     }, 1500);
   };
@@ -107,14 +111,14 @@ export default function InterviwerDashboard() {
     setTimeout(() => {
       const newBooking = {
         id: Date.now(),
-        mentorName: 'Marcus Aurelius',
-        type: 'Infrastructure Architecture',
-        date: 'Scheduled: Pending TBD',
+        mentorName: "Marcus Aurelius",
+        type: "Infrastructure Architecture",
+        date: "Scheduled: Pending TBD",
         price: 250,
-        status: 'Active',
+        status: "Active",
       };
       setPersonalBookings((prev) => [newBooking, ...prev]);
-      setCurrentView('my_bookings');
+      setCurrentView("my_bookings");
       setIsProcessing(false);
     }, 1500);
   };
@@ -137,7 +141,7 @@ export default function InterviwerDashboard() {
         />
 
         <div className="p-4 sm:p-8 md:p-12 space-y-8 sm:space-y-12 flex-1">
-          {currentView === 'overview' && (
+          {currentView === "overview" && (
             <OverviewView
               pendingRequests={pendingRequests}
               confirmedSessions={confirmedSessions}
@@ -146,14 +150,14 @@ export default function InterviwerDashboard() {
             />
           )}
 
-          {currentView === 'wallet' && (
+          {currentView === "wallet" && (
             <WalletView
               userProfile={userProfile}
               onOpenBankModal={() => setBankModalOpen(true)}
             />
           )}
 
-          {currentView === 'profile' && (
+          {currentView === "profile" && (
             <ProfileView
               userProfile={userProfile}
               isEditing={isEditingProfile}
@@ -168,17 +172,17 @@ export default function InterviwerDashboard() {
             />
           )}
 
-          {currentView === 'book_mentorship' && (
+          {currentView === "book_mentorship" && (
             <BookMentorshipView
               isProcessing={isProcessing}
               onBook={handleBookProtocol}
             />
           )}
 
-          {currentView === 'my_bookings' && (
+          {currentView === "my_bookings" && (
             <MyBookingsView
               personalBookings={personalBookings}
-              onNavigateToBook={() => setCurrentView('book_mentorship')}
+              onNavigateToBook={() => setCurrentView("book_mentorship")}
             />
           )}
         </div>

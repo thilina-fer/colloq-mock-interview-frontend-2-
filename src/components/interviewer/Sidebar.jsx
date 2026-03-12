@@ -1,9 +1,14 @@
-import { LogOut } from 'lucide-react';
-import ColloQLogo from './ColloQLogo';
-import SidebarNavSection from './SidebarNavSection';
-import { SIDEBAR_SECTIONS } from '../../constants/sidebarSections';
+import { LogOut } from "lucide-react";
+import ColloQLogo from "./ColloQLogo";
+import SidebarNavSection from "./SidebarNavSection";
+import { SIDEBAR_SECTIONS } from "../../constants/sidebarSections";
 
-export default function Sidebar({ isSidebarOpen, currentView, onViewChange, onToggle }) {
+export default function Sidebar({
+  isSidebarOpen,
+  currentView,
+  onViewChange,
+  onToggle,
+}) {
   return (
     <>
       {/* Mobile backdrop overlay */}
@@ -21,9 +26,10 @@ export default function Sidebar({ isSidebarOpen, currentView, onViewChange, onTo
           bg-[#1A1A1A] text-[#F5F3EE] flex flex-col
           transition-all duration-500
           border-r border-[#1A1A1A]
-          ${isSidebarOpen
-            ? 'translate-x-0 w-[280px]'
-            : '-translate-x-full md:translate-x-0 md:w-[80px]'
+          ${
+            isSidebarOpen
+              ? "translate-x-0 w-[280px]"
+              : "-translate-x-full md:translate-x-0 md:w-[80px]"
           }
         `}
       >
