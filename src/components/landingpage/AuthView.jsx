@@ -22,6 +22,7 @@ const AuthView = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [step, setStep] = useState(0);
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState(false);
@@ -29,6 +30,7 @@ const AuthView = () => {
     name: "",
     email: "",
     password: "",
+    confirmPassword: "",
     bio: "",
     company: "",
     designation: "",
@@ -59,6 +61,15 @@ const AuthView = () => {
       if (!form.email) e.email = "Required";
       if (!form.password) e.password = "Required";
       if (!isLogin && !form.name) e.name = "Required";
+      if (!isLogin && !form.confirmPassword) e.confirmPassword = "Required";
+      if (
+        !isLogin &&
+        form.password &&
+        form.confirmPassword &&
+        form.password !== form.confirmPassword
+      ) {
+        e.confirmPassword = "Passwords do not match";
+      }
     } else if (step === 1) {
       if (!form.bio) e.bio = "Required";
       if (role === "interviewer") {
@@ -123,7 +134,7 @@ const AuthView = () => {
   const ctaLabel = isLogin
     ? "Sign In"
     : step === 2 || (step === 1 && role === "candidate")
-      ? "Complete"
+      ? "Sign Up"
       : "Continue";
 
   return (
@@ -165,6 +176,8 @@ const AuthView = () => {
                   errors={errors}
                   showPassword={showPassword}
                   setShowPassword={setShowPassword}
+                  showConfirmPassword={showConfirmPassword}
+                  setShowConfirmPassword={setShowConfirmPassword}
                 />
               )}
 

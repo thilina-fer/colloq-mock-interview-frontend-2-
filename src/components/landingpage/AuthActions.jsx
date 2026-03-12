@@ -59,7 +59,7 @@ const AuthActions = ({
             fill="#EA4335"
           />
         </svg>
-        Continue with Google
+        {isLogin ? "Sign In with Google" : "Sign Up with Google"}
       </button>
     )}
 
@@ -81,7 +81,7 @@ const AuthActions = ({
           className="text-[11px] font-['DM_Mono'] uppercase tracking-tighter font-bold italic"
           style={{ color: COLORS.muted400 }}
         >
-          {isLogin ? "No active account? " : "Already registered? "}
+          {isLogin ? "Don't have an account? " : "Already have an account? "}
           <button
             onClick={() => {
               if (!loading) {
@@ -93,7 +93,7 @@ const AuthActions = ({
             className="font-black underline underline-offset-8 transition-colors decoration-2"
             style={{ color: COLORS.dark }}
           >
-            {isLogin ? "Initialize New" : "Access Existing"}
+            {isLogin ? "Sign Up" : "Sign In"}
           </button>
         </div>
       )}

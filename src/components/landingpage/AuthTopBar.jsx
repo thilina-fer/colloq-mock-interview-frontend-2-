@@ -10,8 +10,8 @@ const AuthTopBar = ({ isLogin, step, role, setRole, setStep, loading }) => (
       style={{ color: COLORS.muted400 }}
     >
       {isLogin
-        ? "— Authentication Protocol"
-        : `— STEP 0${step + 1} / 0${isLogin ? 1 : role === "interviewer" ? 3 : 2}`}
+        ? "— Sign In"
+        : `— Sign Up Step 0${step + 1} / 0${role === "interviewer" ? 3 : 2}`}
     </span>
 
     <div

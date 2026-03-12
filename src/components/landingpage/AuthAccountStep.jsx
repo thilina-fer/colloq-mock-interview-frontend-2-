@@ -14,6 +14,8 @@ const AuthAccountStep = ({
   errors,
   showPassword,
   setShowPassword,
+  showConfirmPassword,
+  setShowConfirmPassword,
 }) => (
   <div className="space-y-6">
     {!isLogin && (
@@ -77,7 +79,7 @@ const AuthAccountStep = ({
         className="text-[11px] font-black uppercase tracking-[0.2em] font-['DM_Mono'] group-focus-within:text-[#E63946] transition-colors"
         style={{ color: COLORS.muted400 }}
       >
-        Credential Token
+        Password
       </label>
       <div className="relative">
         <Lock
@@ -107,6 +109,44 @@ const AuthAccountStep = ({
         </button>
       </div>
     </div>
+
+    {!isLogin && (
+      <div className="space-y-2 group">
+        <label
+          className="text-[11px] font-black uppercase tracking-[0.2em] font-['DM_Mono'] group-focus-within:text-[#E63946] transition-colors"
+          style={{ color: COLORS.muted400 }}
+        >
+          Re-enter Password
+        </label>
+        <div className="relative">
+          <Lock
+            size={20}
+            className="absolute left-5 top-1/2 -translate-y-1/2"
+            style={{ color: COLORS.muted400 }}
+          />
+          <input
+            type={showConfirmPassword ? "text" : "password"}
+            name="confirmPassword"
+            value={form.confirmPassword}
+            onChange={handleChange}
+            className="w-full py-4 pl-16 pr-16 border-2 outline-none transition-all duration-300 focus:bg-white focus:shadow-xl"
+            style={{
+              ...INPUT_BASE,
+              borderColor: errors.confirmPassword ? COLORS.red : COLORS.borderLight,
+            }}
+            placeholder="••••••••"
+          />
+          <button
+            type="button"
+            className="absolute right-5 top-1/2 -translate-y-1/2 transition-all"
+            style={{ color: COLORS.muted400 }}
+            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+          >
+            {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+          </button>
+        </div>
+      </div>
+    )}
   </div>
 );
 

@@ -6,7 +6,9 @@ const AuthHeader = ({ isLogin, step, steps }) => (
       className="font-['DM_Mono'] text-[12px] tracking-[0.4em] uppercase mb-4 font-bold italic"
       style={{ color: COLORS.red }}
     >
-      {isLogin ? "// Secure Access" : `// Protocol ${steps[step]}`}
+      {isLogin
+        ? "// Sign In"
+        : `// Sign Up ${steps[step] ? `- ${steps[step]}` : ""}`}
     </div>
 
     <h1
@@ -14,10 +16,10 @@ const AuthHeader = ({ isLogin, step, steps }) => (
       style={{ color: COLORS.dark }}
     >
       {isLogin
-        ? "Access ColloQ."
+        ? "Sign In to ColloQ."
         : step === 0
-          ? "Initialize."
-          : "Identity Profile."}
+          ? "Create Account."
+          : "Complete Profile."}
     </h1>
   </div>
 );
