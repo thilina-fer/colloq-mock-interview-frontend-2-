@@ -1,5 +1,5 @@
 import { COLORS } from "../../constants/colors";
-import ColloQLogo from "./ColloQLogo";
+import ColloQLogo from "../ColloQLogo";
 
 const AuthSidebar = ({ step, steps, onBack }) => (
   <div

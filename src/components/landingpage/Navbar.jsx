@@ -1,7 +1,7 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { COLORS } from "../../constants/colors";
-import ColloQLogo from "./ColloQLogo";
+import ColloQLogo from "../ColloQLogo";
 
 const Navbar = ({ scrolled, onGetStarted }) => {
   const [menuOpen, setMenuOpen] = useState(false);

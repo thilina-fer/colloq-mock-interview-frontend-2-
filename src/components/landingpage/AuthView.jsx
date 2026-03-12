@@ -74,8 +74,31 @@ const AuthView = () => {
   const finish = async () => {
     setLoading(true);
     await new Promise((r) => setTimeout(r, 1800));
+    const candidateProfile = {
+      name: form.name || "Alex Sterling",
+      initials:
+        form.name
+          ?.split(" ")
+          .filter(Boolean)
+          .slice(0, 2)
+          .map((part) => part[0]?.toUpperCase())
+          .join("") || "AS",
+      role: "Senior Frontend Engineer",
+      bio:
+        form.bio ||
+        "Specializing in React architecture and high-performance web systems. 8+ years of industry experience across fintech and SaaS.",
+      email: form.email || "alex.s@colloq.io",
+      github: form.githubUrl || "github.com/alexsterling",
+      linkedin: form.linkedinUrl || "linkedin.com/in/alexsterling",
+      joined: "March 2023",
+    };
+    localStorage.setItem(
+      "colloqCandidateProfile",
+      JSON.stringify(candidateProfile),
+    );
     setSuccess(true);
     setLoading(false);
+    setTimeout(() => navigate("/candidate"), 700);
   };
 
   const next = () => {

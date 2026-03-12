@@ -1,5 +1,5 @@
 import { COLORS } from "../../constants/colors";
-import ColloQLogo from "./ColloQLogo";
+import ColloQLogo from "../ColloQLogo";
 import Reveal from "./Reveal";
 
 const FooterCTA = ({ onGetStarted }) => (
