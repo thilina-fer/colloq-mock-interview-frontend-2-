@@ -132,7 +132,9 @@ const AuthAccountStep = ({
             className="w-full py-4 pl-16 pr-16 border-2 outline-none transition-all duration-300 focus:bg-white focus:shadow-xl"
             style={{
               ...INPUT_BASE,
-              borderColor: errors.confirmPassword ? COLORS.red : COLORS.borderLight,
+              borderColor: errors.confirmPassword
+                ? COLORS.red
+                : COLORS.borderLight,
             }}
             placeholder="••••••••"
           />

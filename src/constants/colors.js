@@ -19,6 +19,7 @@ export const COLORS = {
   yellow: "#EAB308",
   dark10: "rgba(26, 26, 26, 0.1)",
   dark05: "rgba(26, 26, 26, 0.05)",
+  dark80: "rgba(26, 26, 26, 0.8)",
   soft20: "rgba(245, 243, 238, 0.2)",
   soft10: "rgba(245, 243, 238, 0.1)",
   soft40: "rgba(245, 243, 238, 0.4)",

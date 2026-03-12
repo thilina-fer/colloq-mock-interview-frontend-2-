@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import AuthView from "../components/landingpage/AuthView";
 import LandingPage from "../pages/LandingPage";
 import CandidateDashboard from "../pages/CandidateDashboard";
+import InterviwerDashboard from "../pages/InterviwerDashboard";
 
 const AppRoutes = () => (
   <BrowserRouter>
@@ -9,6 +10,7 @@ const AppRoutes = () => (
       <Route path="/" element={<LandingPage />} />
       <Route path="/auth" element={<AuthView />} />
       <Route path="/candidate" element={<CandidateDashboard />} />
+      <Route path="/interviewer" element={<InterviwerDashboard />} />
     </Routes>
   </BrowserRouter>
 );

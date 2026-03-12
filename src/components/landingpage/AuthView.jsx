@@ -85,31 +85,70 @@ const AuthView = () => {
   const finish = async () => {
     setLoading(true);
     await new Promise((r) => setTimeout(r, 1800));
-    const candidateProfile = {
-      name: form.name || "Alex Sterling",
-      initials:
-        form.name
-          ?.split(" ")
-          .filter(Boolean)
-          .slice(0, 2)
-          .map((part) => part[0]?.toUpperCase())
-          .join("") || "AS",
-      role: "Senior Frontend Engineer",
-      bio:
-        form.bio ||
-        "Specializing in React architecture and high-performance web systems. 8+ years of industry experience across fintech and SaaS.",
-      email: form.email || "alex.s@colloq.io",
-      github: form.githubUrl || "github.com/alexsterling",
-      linkedin: form.linkedinUrl || "linkedin.com/in/alexsterling",
-      joined: "March 2023",
-    };
-    localStorage.setItem(
-      "colloqCandidateProfile",
-      JSON.stringify(candidateProfile),
-    );
-    setSuccess(true);
-    setLoading(false);
-    setTimeout(() => navigate("/candidate"), 700);
+
+    if (role === "interviewer") {
+      const expertise =
+        form.specializations.length > 0
+          ? SPECS.filter((s) => form.specializations.includes(s.id))
+              .map((s) => s.name)
+              .join(", ")
+          : "Distributed Systems, Node.js";
+
+      const interviewerProfile = {
+        name: form.name || "Sarah Levinson",
+        role:
+          form.designation && form.company
+            ? `${form.designation} @ ${form.company}`
+            : "Staff Software Engineer @ Stripe",
+        expertise,
+        bio:
+          form.bio ||
+          "ColloQ empowers engineers to scale through effective communication and feedback. Specialized in high-scale backend architecture and distributed data systems.",
+        email: form.email || "sarah.l@colloq.io",
+        github: form.githubUrl || "github.com/slevinson",
+        linkedin: form.linkedinUrl || "linkedin.com/in/sarah-levinson",
+        joined: new Date().toLocaleDateString("en-US", {
+          month: "long",
+          year: "numeric",
+        }),
+        walletBalance: 0.0,
+        bankConnected: false,
+        bankAccount: null,
+      };
+      localStorage.setItem(
+        "colloqInterviewerProfile",
+        JSON.stringify(interviewerProfile),
+      );
+      setSuccess(true);
+      setLoading(false);
+      setTimeout(() => navigate("/interviewer"), 700);
+    } else {
+      const candidateProfile = {
+        name: form.name || "Alex Sterling",
+        initials:
+          form.name
+            ?.split(" ")
+            .filter(Boolean)
+            .slice(0, 2)
+            .map((part) => part[0]?.toUpperCase())
+            .join("") || "AS",
+        role: "Senior Frontend Engineer",
+        bio:
+          form.bio ||
+          "Specializing in React architecture and high-performance web systems. 8+ years of industry experience across fintech and SaaS.",
+        email: form.email || "alex.s@colloq.io",
+        github: form.githubUrl || "github.com/alexsterling",
+        linkedin: form.linkedinUrl || "linkedin.com/in/alexsterling",
+        joined: "March 2023",
+      };
+      localStorage.setItem(
+        "colloqCandidateProfile",
+        JSON.stringify(candidateProfile),
+      );
+      setSuccess(true);
+      setLoading(false);
+      setTimeout(() => navigate("/candidate"), 700);
+    }
   };
 
   const next = () => {

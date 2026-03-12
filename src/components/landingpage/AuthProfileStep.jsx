@@ -30,41 +30,93 @@ const AuthProfileStep = ({ role, form, handleChange, errors }) => (
     </div>
 
     {role === "interviewer" ? (
-      <div className="grid grid-cols-2 gap-6">
-        <div className="space-y-2">
-          <label
-            className="text-[11px] font-black uppercase tracking-[0.2em] font-['DM_Mono']"
-            style={{ color: COLORS.muted400 }}
-          >
-            Current Company
-          </label>
-          <input
-            name="company"
-            value={form.company}
-            onChange={handleChange}
-            className="w-full py-4 px-6 border-2 outline-none transition-all duration-300"
-            style={{
-              ...INPUT_STYLE,
-              borderColor: errors.company ? COLORS.red : COLORS.borderLight,
-            }}
-          />
+      <div className="space-y-6">
+        <div className="grid grid-cols-2 gap-6">
+          <div className="space-y-2">
+            <label
+              className="text-[11px] font-black uppercase tracking-[0.2em] font-['DM_Mono']"
+              style={{ color: COLORS.muted400 }}
+            >
+              Current Company
+            </label>
+            <input
+              name="company"
+              value={form.company}
+              onChange={handleChange}
+              className="w-full py-4 px-6 border-2 outline-none transition-all duration-300"
+              style={{
+                ...INPUT_STYLE,
+                borderColor: errors.company ? COLORS.red : COLORS.borderLight,
+              }}
+            />
+          </div>
+          <div className="space-y-2">
+            <label
+              className="text-[11px] font-black uppercase tracking-[0.2em] font-['DM_Mono']"
+              style={{ color: COLORS.muted400 }}
+            >
+              Designation / Role
+            </label>
+            <input
+              name="designation"
+              value={form.designation}
+              onChange={handleChange}
+              className="w-full py-4 px-6 border-2 outline-none transition-all duration-300"
+              style={{
+                ...INPUT_STYLE,
+                borderColor: errors.designation ? COLORS.red : COLORS.borderLight,
+              }}
+            />
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-6">
+          <div className="space-y-2">
+            <label
+              className="text-[11px] font-black uppercase tracking-[0.2em] font-['DM_Mono']"
+              style={{ color: COLORS.muted400 }}
+            >
+              Experience (Years)
+            </label>
+            <input
+              name="experience"
+              value={form.experience}
+              onChange={handleChange}
+              className="w-full py-4 px-6 border-2 outline-none transition-all duration-300"
+              style={{
+                ...INPUT_STYLE,
+                borderColor: errors.experience ? COLORS.red : COLORS.borderLight,
+              }}
+            />
+          </div>
+          <div className="space-y-2">
+            <label
+              className="text-[11px] font-black uppercase tracking-[0.2em] font-['DM_Mono']"
+              style={{ color: COLORS.muted400 }}
+            >
+              GitHub
+            </label>
+            <input
+              name="githubUrl"
+              value={form.githubUrl}
+              onChange={handleChange}
+              className="w-full py-4 px-6 border-2 outline-none transition-all duration-300"
+              style={INPUT_STYLE}
+            />
+          </div>
         </div>
         <div className="space-y-2">
           <label
             className="text-[11px] font-black uppercase tracking-[0.2em] font-['DM_Mono']"
             style={{ color: COLORS.muted400 }}
           >
-            Experience (Y)
+            LinkedIn
           </label>
           <input
-            name="experience"
-            value={form.experience}
+            name="linkedinUrl"
+            value={form.linkedinUrl}
             onChange={handleChange}
             className="w-full py-4 px-6 border-2 outline-none transition-all duration-300"
-            style={{
-              ...INPUT_STYLE,
-              borderColor: errors.experience ? COLORS.red : COLORS.borderLight,
-            }}
+            style={INPUT_STYLE}
           />
         </div>
       </div>
