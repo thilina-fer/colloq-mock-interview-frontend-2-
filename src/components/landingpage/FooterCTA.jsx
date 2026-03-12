@@ -4,11 +4,11 @@ import Reveal from "./Reveal";
 
 const FooterCTA = ({ onGetStarted }) => (
   <footer
-    className="py-40 px-6 md:px-12 max-w-7xl mx-auto text-center"
+    className="py-20 sm:py-28 md:py-40 px-5 sm:px-6 md:px-12 max-w-7xl mx-auto text-center"
     style={{ borderTop: `1px solid ${COLORS.dark10}` }}
   >
     <Reveal animation="fade-up">
-      <h2 className="font-['Unbounded'] text-5xl md:text-8xl font-black uppercase mb-16 italic tracking-tighter leading-none">
+      <h2 className="font-['Unbounded'] text-4xl sm:text-5xl md:text-8xl font-black uppercase mb-10 md:mb-16 italic tracking-tighter leading-none">
         Speak Your <span style={{ color: COLORS.red }}>Worth.</span>
       </h2>
     </Reveal>
@@ -16,7 +16,7 @@ const FooterCTA = ({ onGetStarted }) => (
     <Reveal animation="fade-up" delay={200}>
       <button
         onClick={onGetStarted}
-        className="px-20 py-8 font-['Unbounded'] text-sm font-black uppercase tracking-[0.4em] hover:scale-105 active:scale-95 transition-all duration-300"
+        className="px-10 sm:px-16 md:px-20 py-5 sm:py-6 md:py-8 font-['Unbounded'] text-xs sm:text-sm font-black uppercase tracking-[0.3em] sm:tracking-[0.4em] hover:scale-105 active:scale-95 transition-all duration-300"
         style={{
           backgroundColor: COLORS.dark,
           color: COLORS.softBg,
@@ -28,7 +28,7 @@ const FooterCTA = ({ onGetStarted }) => (
     </Reveal>
 
     <div
-      className="mt-48 flex flex-col md:flex-row justify-between items-center gap-16 pt-16"
+      className="mt-16 sm:mt-24 md:mt-48 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-16 pt-10 md:pt-16"
       style={{ borderTop: `1px solid ${COLORS.dark05}` }}
     >
       <ColloQLogo variant="dark" size="md" />

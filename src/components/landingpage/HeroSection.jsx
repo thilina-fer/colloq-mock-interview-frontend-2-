@@ -3,16 +3,16 @@ import { COLORS } from "../../constants/colors";
 import Reveal from "./Reveal";
 
 const HeroSection = ({ onGetStarted }) => (
-  <section className="pt-48 pb-32 px-6 md:px-12 max-w-7xl mx-auto">
-    <div className="grid lg:grid-cols-12 gap-12 items-center">
+  <section className="pt-28 sm:pt-36 md:pt-48 pb-14 md:pb-32 px-5 sm:px-6 md:px-12 max-w-7xl mx-auto">
+    <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
       <div className="lg:col-span-8">
         <Reveal animation="fade-up" delay={100}>
           <div
-            className="font-['DM_Mono'] text-xs font-bold tracking-[0.4em] uppercase mb-6 flex items-center gap-4"
+            className="font-['DM_Mono'] text-[10px] sm:text-xs font-bold tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-5 md:mb-6 flex items-center gap-3 sm:gap-4"
             style={{ color: COLORS.red }}
           >
             <span
-              className="w-8 h-px"
+              className="w-6 sm:w-8 h-px"
               style={{ backgroundColor: COLORS.red }}
             />
             Engineering Career Accelerator
@@ -20,7 +20,7 @@ const HeroSection = ({ onGetStarted }) => (
         </Reveal>
 
         <Reveal animation="fade-up" delay={300}>
-          <h1 className="font-['Unbounded'] text-6xl md:text-[6.5rem] font-black leading-[0.82] tracking-tighter uppercase mb-8">
+          <h1 className="font-['Unbounded'] text-[2.2rem] sm:text-5xl md:text-[5.5rem] lg:text-[6.5rem] font-black leading-[0.88] sm:leading-[0.85] md:leading-[0.82] tracking-tighter uppercase mb-6 md:mb-8">
             Code is Half.
             <br />
             Talk is{" "}
@@ -35,7 +35,7 @@ const HeroSection = ({ onGetStarted }) => (
 
         <Reveal animation="fade-up" delay={500}>
           <p
-            className="max-w-xl text-lg md:text-xl leading-relaxed mb-10 border-l-4 pl-8"
+            className="max-w-xl text-base md:text-xl leading-relaxed mb-8 md:mb-10 border-l-4 pl-5 sm:pl-8"
             style={{ color: COLORS.muted600, borderColor: COLORS.dark }}
           >
             ColloQ translates technical brilliance into interview-winning
@@ -44,10 +44,10 @@ const HeroSection = ({ onGetStarted }) => (
         </Reveal>
 
         <Reveal animation="fade-up" delay={700}>
-          <div className="flex flex-col sm:flex-row gap-6">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
             <button
               onClick={onGetStarted}
-              className="px-12 py-6 font-['Unbounded'] text-xs font-black uppercase tracking-widest transition-all flex items-center justify-center gap-4 group shadow-2xl"
+              className="px-8 sm:px-12 py-4 sm:py-6 font-['Unbounded'] text-xs font-black uppercase tracking-widest transition-all flex items-center justify-center gap-4 group shadow-2xl"
               style={{ backgroundColor: COLORS.dark, color: COLORS.softBg }}
             >
               Get Started
@@ -57,7 +57,7 @@ const HeroSection = ({ onGetStarted }) => (
               />
             </button>
             <button
-              className="border-2 px-12 py-6 font-['Unbounded'] text-xs font-black uppercase tracking-widest transition-all duration-300"
+              className="border-2 px-8 sm:px-12 py-4 sm:py-6 font-['Unbounded'] text-xs font-black uppercase tracking-widest transition-all duration-300"
               style={{ borderColor: COLORS.dark, color: COLORS.dark }}
             >
               Methodology

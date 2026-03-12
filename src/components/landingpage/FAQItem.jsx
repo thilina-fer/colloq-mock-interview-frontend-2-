@@ -9,9 +9,9 @@ const FAQItem = ({ q, a }) => {
     <div style={{ borderBottom: `1px solid ${COLORS.dark10}` }}>
       <button
         onClick={() => setOpen(!open)}
-        className="w-full py-6 flex justify-between items-center text-left group"
+        className="w-full py-5 sm:py-6 flex justify-between items-center text-left group gap-4"
       >
-        <span className="font-['Unbounded'] text-sm font-bold uppercase transition-colors">
+        <span className="font-['Unbounded'] text-xs sm:text-sm font-bold uppercase transition-colors leading-snug">
           {q}
         </span>
         {open ? <Minus size={18} /> : <Plus size={18} />}

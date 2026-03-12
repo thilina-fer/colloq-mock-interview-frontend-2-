@@ -7,11 +7,11 @@ const DualValueSection = () => (
     <div className="grid md:grid-cols-2">
       <Reveal animation="slide-left" duration={1000}>
         <div
-          className="bg-white p-12 md:p-24 border-y h-full flex flex-col justify-center"
+          className="bg-white p-8 sm:p-12 md:p-24 border-y h-full flex flex-col justify-center"
           style={{ borderColor: COLORS.dark10 }}
         >
-          <User style={{ color: COLORS.red }} className="mb-10" size={56} />
-          <h2 className="font-['Unbounded'] text-4xl font-black uppercase mb-8 italic leading-none">
+          <User style={{ color: COLORS.red }} className="mb-6 md:mb-10" size={44} />
+          <h2 className="font-['Unbounded'] text-3xl sm:text-4xl font-black uppercase mb-6 md:mb-8 italic leading-none">
             For Job
             <br />
             Seekers
@@ -54,7 +54,7 @@ const DualValueSection = () => (
 
       <Reveal animation="slide-right" duration={1000}>
         <div
-          className="p-12 md:p-24 border-y h-full flex flex-col justify-center"
+          className="p-8 sm:p-12 md:p-24 border-y h-full flex flex-col justify-center"
           style={{
             backgroundColor: COLORS.dark,
             color: COLORS.softBg,
@@ -63,10 +63,10 @@ const DualValueSection = () => (
         >
           <Briefcase
             style={{ color: COLORS.red }}
-            className="mb-10"
-            size={56}
+            className="mb-6 md:mb-10"
+            size={44}
           />
-          <h2 className="font-['Unbounded'] text-4xl font-black uppercase mb-8 italic leading-none">
+          <h2 className="font-['Unbounded'] text-3xl sm:text-4xl font-black uppercase mb-6 md:mb-8 italic leading-none">
             For Senior
             <br />
             Mentors

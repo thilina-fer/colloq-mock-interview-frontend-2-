@@ -4,10 +4,10 @@ import { COLORS } from "../../constants/colors";
 import Reveal from "./Reveal";
 
 const PricingSection = ({ onGetStarted }) => (
-  <section id="pricing" className="py-40 px-6 md:px-12 max-w-7xl mx-auto">
+  <section id="pricing" className="py-16 sm:py-24 md:py-40 px-5 sm:px-6 md:px-12 max-w-7xl mx-auto">
     <Reveal animation="fade-up">
-      <div className="text-center mb-32">
-        <h2 className="font-['Unbounded'] text-4xl md:text-6xl font-black uppercase mb-6 italic">
+      <div className="text-center mb-12 sm:mb-20 md:mb-32">
+        <h2 className="font-['Unbounded'] text-3xl sm:text-4xl md:text-6xl font-black uppercase mb-6 italic">
           Investment
         </h2>
         <p
@@ -19,11 +19,11 @@ const PricingSection = ({ onGetStarted }) => (
       </div>
     </Reveal>
 
-    <div className="grid md:grid-cols-3 gap-10">
+    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
       {PRICING.map((plan, i) => (
         <Reveal key={plan.name} animation="fade-up" delay={i * 200}>
           <div
-            className={`group p-12 border-2 flex flex-col relative transition-all duration-500 hover:-translate-y-4 ${
+            className={`group p-8 md:p-12 border-2 flex flex-col relative transition-all duration-500 hover:-translate-y-4 ${
               plan.popular
                 ? "bg-white"
                 : "bg-transparent hover:bg-white hover:shadow-xl"

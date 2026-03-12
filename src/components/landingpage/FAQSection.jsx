@@ -4,10 +4,10 @@ import FAQItem from "./FAQItem";
 import Reveal from "./Reveal";
 
 const FAQSection = () => (
-  <section className="py-40 px-6 md:px-12 max-w-4xl mx-auto">
+  <section className="py-16 sm:py-24 md:py-40 px-5 sm:px-6 md:px-12 max-w-4xl mx-auto">
     <Reveal animation="fade-up">
-      <div className="text-center mb-20">
-        <h2 className="font-['Unbounded'] text-4xl font-black uppercase mb-4 italic">
+      <div className="text-center mb-10 sm:mb-16 md:mb-20">
+        <h2 className="font-['Unbounded'] text-3xl sm:text-4xl font-black uppercase mb-4 italic">
           Protocol FAQ
         </h2>
         <div
