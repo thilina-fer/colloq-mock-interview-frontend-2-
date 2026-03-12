@@ -20,7 +20,10 @@ const PROCESS_ITEMS = [
 ];
 
 const ProcessSection = () => (
-  <section id="process" className="py-16 sm:py-24 md:py-40 px-5 sm:px-6 md:px-12 max-w-7xl mx-auto">
+  <section
+    id="process"
+    className="py-16 sm:py-24 md:py-40 px-5 sm:px-6 md:px-12 max-w-7xl mx-auto"
+  >
     <Reveal animation="fade-up">
       <div className="text-center mb-12 sm:mb-20 md:mb-32">
         <h2 className="font-['Unbounded'] text-3xl sm:text-4xl md:text-6xl font-black uppercase mb-6 italic tracking-tight">

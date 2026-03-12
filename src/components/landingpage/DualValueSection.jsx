@@ -10,7 +10,11 @@ const DualValueSection = () => (
           className="bg-white p-8 sm:p-12 md:p-24 border-y h-full flex flex-col justify-center"
           style={{ borderColor: COLORS.dark10 }}
         >
-          <User style={{ color: COLORS.red }} className="mb-6 md:mb-10" size={44} />
+          <User
+            style={{ color: COLORS.red }}
+            className="mb-6 md:mb-10"
+            size={44}
+          />
           <h2 className="font-['Unbounded'] text-3xl sm:text-4xl font-black uppercase mb-6 md:mb-8 italic leading-none">
             For Job
             <br />

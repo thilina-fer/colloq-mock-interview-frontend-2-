@@ -75,7 +75,10 @@ const Navbar = ({ scrolled, onGetStarted }) => {
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
           menuOpen ? "max-h-64" : "max-h-0"
         }`}
-        style={{ backgroundColor: COLORS.white, borderTop: menuOpen ? `1px solid ${COLORS.dark10}` : "none" }}
+        style={{
+          backgroundColor: COLORS.white,
+          borderTop: menuOpen ? `1px solid ${COLORS.dark10}` : "none",
+        }}
       >
         <div className="px-5 py-6 flex flex-col gap-5 font-['DM_Mono'] text-xs font-bold uppercase tracking-widest">
           <button
@@ -93,7 +96,10 @@ const Navbar = ({ scrolled, onGetStarted }) => {
             Pricing
           </button>
           <button
-            onClick={() => { closeMenu(); onGetStarted(); }}
+            onClick={() => {
+              closeMenu();
+              onGetStarted();
+            }}
             className="py-3 px-6 text-center transition-all duration-300 shadow-md active:scale-95"
             style={{ backgroundColor: COLORS.dark, color: COLORS.softBg }}
           >
