@@ -119,7 +119,7 @@ const AuthPage = () => {
   return (
     <AuthLayout sidebar={<AuthSidebar step={step} steps={STEPS} />}>
       {/* Right panel */}
-      <div className="flex-1 flex flex-col h-full overflow-hidden bg-white">
+      <div className="flex-1 flex flex-col min-h-screen lg:min-h-0 lg:h-full overflow-hidden bg-white">
         <AuthTopBar
           isLogin={isLogin}
           step={step}
@@ -130,8 +130,8 @@ const AuthPage = () => {
         />
 
         {/* Vertically-centred form container */}
-        <div className="flex-1 flex justify-center items-center w-full overflow-y-auto">
-          <div className="w-full max-w-2xl px-6 md:px-16 lg:px-0 py-8">
+        <div className="flex-1 flex justify-center items-start md:items-center w-full overflow-y-auto">
+          <div className="w-full max-w-2xl px-4 sm:px-6 md:px-10 lg:px-12 py-6 md:py-8">
             <AuthHeader isLogin={isLogin} step={step} />
 
             {success && <SuccessAlert />}

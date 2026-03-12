@@ -1,9 +1,9 @@
 // Candidate / Interviewer toggle switcher.
 // Disables clicks while loading to prevent mid-request role changes.
 const RoleToggle = ({ role, setRole, setStep, loading }) => (
-  <div className="flex border-[2px] border-[#1A1A1A] bg-white">
+  <div className="flex w-full sm:w-auto border-[2px] border-[#1A1A1A] bg-white">
     <button
-      className={`px-6 py-2 text-[10px] font-bold tracking-widest uppercase transition-all ${
+      className={`flex-1 sm:flex-none px-3 sm:px-6 py-2 text-[9px] sm:text-[10px] font-bold tracking-[0.12em] sm:tracking-widest uppercase transition-all ${
         role === "candidate"
           ? "bg-[#1A1A1A] text-[#F5F3EE]"
           : "text-[#1A1A1A] hover:bg-neutral-50 border-r-[2px] border-[#1A1A1A]"
@@ -18,7 +18,7 @@ const RoleToggle = ({ role, setRole, setStep, loading }) => (
       Candidate
     </button>
     <button
-      className={`px-6 py-2 text-[10px] font-bold tracking-widest uppercase transition-all ${
+      className={`flex-1 sm:flex-none px-3 sm:px-6 py-2 text-[9px] sm:text-[10px] font-bold tracking-[0.12em] sm:tracking-widest uppercase transition-all ${
         role === "interviewer"
           ? "bg-[#1A1A1A] text-[#F5F3EE]"
           : "text-[#1A1A1A] hover:bg-neutral-50"

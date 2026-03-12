@@ -3,7 +3,7 @@ const GoogleButton = ({ googleAuth, loading }) => (
   <button
     onClick={googleAuth}
     disabled={loading}
-    className="w-full flex items-center justify-center gap-3 py-3 border-[2px] border-[#1A1A1A] bg-white text-[#1A1A1A] text-[10px] font-bold uppercase tracking-widest hover:bg-neutral-50 transition-all disabled:opacity-40"
+    className="w-full flex items-center justify-center gap-2.5 sm:gap-3 py-3 border-[2px] border-[#1A1A1A] bg-white text-[#1A1A1A] text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.12em] sm:tracking-widest hover:bg-neutral-50 transition-all disabled:opacity-40"
   >
     <svg
       width="18"

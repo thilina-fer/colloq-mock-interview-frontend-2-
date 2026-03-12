@@ -22,7 +22,7 @@ const ProfileStep = ({ role, form, handleChange, errors }) => (
 
     {role === "interviewer" ? (
       <div className="space-y-4">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-1.5">
             <label className="text-[10px] font-bold uppercase text-neutral-500 tracking-widest font-['DM_Mono']">
               Company
@@ -51,7 +51,7 @@ const ProfileStep = ({ role, form, handleChange, errors }) => (
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-1.5">
             <label className="text-[10px] font-bold uppercase text-neutral-500 tracking-widest font-['DM_Mono']">
               Experience
@@ -80,7 +80,7 @@ const ProfileStep = ({ role, form, handleChange, errors }) => (
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-1.5">
             <label className="text-[10px] font-bold uppercase text-neutral-500 tracking-widest font-['DM_Mono']">
               LinkedIn
@@ -96,7 +96,7 @@ const ProfileStep = ({ role, form, handleChange, errors }) => (
         </div>
       </div>
     ) : (
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-1.5">
           <label className="text-[10px] font-bold uppercase text-neutral-500 tracking-widest font-['DM_Mono']">
             GitHub
