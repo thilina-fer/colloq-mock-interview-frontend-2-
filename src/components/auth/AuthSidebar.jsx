@@ -1,5 +1,5 @@
 import StepIndicator from "./StepIndicator";
-import ColloQLogo from "./ColloQLogo";
+import ColloQLogo from "../ColloQLogo";
 
 // Dark left-panel branding sidebar.
 // Hidden on screens smaller than lg (1024 px) — exactly the original behaviour.
@@ -9,7 +9,11 @@ const AuthSidebar = ({ step, steps }) => (
     <div className="absolute top-0 left-24 w-px h-full bg-[#F5F3EE]/10" />
 
     {/* Logo */}
-    <ColloQLogo className="mb-auto relative z-10" />
+    <ColloQLogo
+      variant="light"
+      className="mb-auto relative z-10"
+      textClassName="text-sm tracking-[0.2em]"
+    />
 
     {/* Large headline */}
     <div className="font-['Unbounded'] text-[54px] font-black leading-[0.9] tracking-tighter mb-12 flex-1 flex items-end relative z-10">
